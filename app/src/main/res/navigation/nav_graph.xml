@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:label="Home"
+        android:name="com.example.jetpack.ui.main.MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_todoFragment"
+            app:destination="@id/todoFragment" />
+        <argument
+            android:defaultValue="0"
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoFragment"
+        android:label="Todo"
+        android:name="com.example.jetpack.ui.todo.TodoFragment"
+        tools:layout="@layout/todo_fragment">
+        <action
+            android:id="@+id/action_todoFragment_to_otherFragment"
+            app:destination="@id/otherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otherFragment"
+        android:label="other_fragment"
+        android:name="com.example.jetpack.ui.other.OtherFragment"
+        tools:layout="@layout/other_fragment">
+        <action
+            android:id="@+id/action_otherFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
